@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="form_validation.css">
+    <script>
+       function Validate(){
+        if(document.myForm.EMail.value == "") {
+            alert("Please provide your Email ID")
+            document.myForm.EMail.focus()
+            return false
+        }else if(document.myForm.Password.value == "") {
+            alert("Please provide your Password")
+            document.myForm.Password.focus()
+            return false
+        }
+        else {
+            return true
+        }
+       }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="message.html" name="myForm" onsubmit="return(Validate());">
+        <label for="">Name: </label>
+        <input type="text" placeholder="Name" required><br><br>
+
+        <label for="">Email Id: </label>
+        <input type="email" name="EMail" id="text" placeholder="xyz123@gmail.com" required><br><br>
+
+        <label for="">Phone Number: </label>
+        <input type="number" required><br><br>
+
+        <label for="">Password:  </label>
+        <input type="password" name="Password" required><br><br>
+
+        <label for="">Age:  </label>
+        <input type="number" required><br><br>
+
+        <label for="gender">Gender: </label>
+        <input type="radio" value="m" name="gender"> Male
+        <input type="radio" value="f" name="gender"> Female
+        <input type="radio" value="o" name="gender"> Others <br><br>
+
+        <label for="">Date:  </label>
+        <input type="date"><br><br>
+
+        <label for="">Color Picker:  </label>
+        <input type="color"><br><br>
+    
+        <button onclick="validate()" type="submit">Validate</button>
+    </form>
+</div>
+
+    
+    <!-- <form action="message.html" name="myForm" onsubmit="return(Validate());">
+    <input type="text" name="EMail" placeholder="Email"><br>
+    <input type="password" name="Password" placeholder="Password"><br>
+    <button type="submit">Submit</button>
+    </form> -->
+</body>
+</html>
